@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>입덕보조기</title>
+    <style media="screen">
+      .flex-container{
+        width: 100%;
+        height: 100vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+      .box{
+        background: transparent;
+        text-align: center;
+        padding: 2em;
+        font-size: xx-large;
+      }
+      #cp_name{
+        width: 380px;
+        height: 50px;
+      }
+      #search_button{
+        width: 120px;
+        height: 54px;
+        background-color: skyblue;
+      }
+      input {
+        font-size: 30px;
+      }
+      #page_num{
+        width: 100px;
+        height: 53px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="box"><h1>POSTYPE SEARCH</h1>
+      <form class="" action="http://127.0.0.1:8000/search_result/" method="post">
+        {% csrf_token %}
+        <input type="text" id="cp_name" name="couple_name" value="">
+        <input type="submit" id="search_button" name="search" value="search">
+        <select id="page_num" name="page">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </form> <!--크롤링할 페이지를 지정할 수 있는 옵션이 필요함(드롭다운) -->
+      </div>
+    </div>
+  </body>
+</html>

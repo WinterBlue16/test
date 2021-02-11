@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ result_group.cp_name }} 검색 결과</title>
+    <style>
+      table {
+        border: None;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      div {
+        text-align: center;
+      }
+      .homebutton{
+        background-color: skyblue;
+        width: 230px;
+        height: 54px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <center><h2>"{{ result_group.cp_name }}"의 포스타입 인기작 목록</h2></center>
+    <center><h3>해당 검색어의 인기 작가는 {{ result_group.top_writers.0 }}, {{ result_group.top_writers.1 }}, {{ result_group.top_writers.2 }}입니다.</h3></center> <!--작가 이름별로 링크가 달리도록 코딩, 클릭 시 바로 검색한 커플링의 글들이 좋아요 순으로 정렬 -->
+   {{ result_group.data_table | safe }}
+   <br>
+   <br>
+   <div>
+  <button class="homebutton" onclick="history.back();">검색창으로 돌아가기</button>
+   </div>
+   <br>
+   <br>
+  </body>
+</html>
